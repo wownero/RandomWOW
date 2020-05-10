@@ -36,7 +36,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <atomic>
 #include "stopwatch.hpp"
 #include "utility.hpp"
-#include "../randomx.h"
+#include "../randomx2.h"
 #include "../dataset.hpp"
 #include "../blake2/endian.h"
 #include "../common.hpp"

@@ -37,7 +37,7 @@
     <ClInclude Include="..\src\jit_compiler_x86.hpp" />
     <ClInclude Include="..\src\jit_compiler_x86_static.hpp" />
     <ClInclude Include="..\src\program.hpp" />
-    <ClInclude Include="..\src\randomx.h" />
+    <ClInclude Include="..\src\randomx2.h" />
     <ClInclude Include="..\src\reciprocal.h" />
     <ClInclude Include="..\src\soft_aes.h" />
     <ClInclude Include="..\src\superscalar.hpp" />

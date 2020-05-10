@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include "utility.hpp"
-#include "../randomx.h"
+#include "../randomx2.h"
 #include "../virtual_machine.hpp"
 #include "../blake2/endian.h"
 

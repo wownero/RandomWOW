@@ -1,4 +1,4 @@
-#include "../randomx.h"
+#include "../randomx2.h"
 #include <stdio.h>
 
 int main() {

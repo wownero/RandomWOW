@@ -123,7 +123,7 @@
     <ClCompile Include="..\src\tests\api-example1.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\randomx.h" />
+    <ClInclude Include="..\src\randomx2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

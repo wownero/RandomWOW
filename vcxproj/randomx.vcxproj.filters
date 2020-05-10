@@ -110,7 +110,7 @@
     <ClInclude Include="..\src\reciprocal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\randomx.h">
+    <ClInclude Include="..\src\randomx2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\allocator.hpp">

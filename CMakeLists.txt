@@ -30,7 +30,7 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(RandomX)
 
-set(randomx_sources
+set(randomx2_sources
 src/aes_hash.cpp
 src/argon2_ref.c
 src/argon2_ssse3.c
@@ -44,7 +44,7 @@ src/vm_interpreted.cpp
 src/allocator.cpp
 src/assembly_generator_x86.cpp
 src/instruction.cpp
-src/randomx.cpp
+src/randomx2.cpp
 src/superscalar.cpp
 src/vm_compiled.cpp
 src/vm_interpreted_light.cpp
@@ -97,12 +97,12 @@ endfunction()
 
 # x86-64
 if(ARCH_ID STREQUAL "x86_64" OR ARCH_ID STREQUAL "x86-64" OR ARCH_ID STREQUAL "amd64")
-  list(APPEND randomx_sources
+  list(APPEND randomx2_sources
     src/jit_compiler_x86.cpp)
 
   if(MSVC)
     enable_language(ASM_MASM)
-    list(APPEND randomx_sources src/jit_compiler_x86_static.asm)
+    list(APPEND randomx2_sources src/jit_compiler_x86_static.asm)
 
     set_property(SOURCE src/jit_compiler_x86_static.asm PROPERTY LANGUAGE ASM_MASM)
 
@@ -115,7 +115,7 @@ if(ARCH_ID STREQUAL "x86_64" OR ARCH_ID STREQUAL "x86-64" OR ARCH_ID STREQUAL "a
     add_custom_target(generate-asm
       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/asm/configuration.asm)
   else()
-    list(APPEND randomx_sources src/jit_compiler_x86_static.S)
+    list(APPEND randomx2_sources src/jit_compiler_x86_static.S)
 
     # cheat because cmake and ccache hate each other
     set_property(SOURCE src/jit_compiler_x86_static.S PROPERTY LANGUAGE C)
@@ -148,7 +148,7 @@ endif()
 
 # ARMv8
 if(ARM_ID STREQUAL "aarch64" OR ARM_ID STREQUAL "arm64" OR ARM_ID STREQUAL "armv8-a")
-  list(APPEND randomx_sources
+  list(APPEND randomx2_sources
     src/jit_compiler_a64_static.S
     src/jit_compiler_a64.cpp)
   # cheat because cmake and ccache hate each other
@@ -170,9 +170,9 @@ if(ARM_ID STREQUAL "aarch64" OR ARM_ID STREQUAL "arm64" OR ARM_ID STREQUAL "armv
   endif()
 endif()
 
-set(RANDOMX_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src" CACHE STRING "RandomX Include path")
+set(RANDOMX2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/src" CACHE STRING "RandomX Include path")
 
-add_library(randomx ${randomx_sources})
+add_library(randomx ${randomx2_sources})
 
 if(TARGET generate-asm)
   add_dependencies(randomx generate-asm)

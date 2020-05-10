@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <climits>
 #include "blake2/endian.h"
 #include "configuration.h"
-#include "randomx.h"
+#include "randomx2.h"
 
 namespace randomx {
 
